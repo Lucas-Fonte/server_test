@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<body style="
+    font-family: 'Courier New', Courier, monospace; 
+    padding-bottom: 200px; 
+    padding-left: 30px;
+    padding-right: 30px;">
+    
+    <p align="center">  
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg" alt="ts-logo" width="60"/>
+          +
+          <img src="https://image.flaticon.com/icons/svg/2165/2165022.svg" alt="api-logo" width="60" />
+        </p></p>
+        <p><h1 align="center">
+            Server Test
+        </h1></p>
+        <p align="center">
+        This is a test server that creates and login users, connected to mongoDB + JWT to validate sessions.
+        
+        </p>
+        
+        <p><br /></p>
+        <p align="center">
+        <img src="https://img.shields.io/badge/Code-Typescript-informational?style=flat&logo=typescript&logoColor=white&color=2bbc8a)" alt="image" />
+        <img src="https://img.shields.io/badge/Tools-Yarn-informational?style=flat&logo=yarn&logoColor=white&color=2bbc8a)" alt="image" />
+        <img src="https://img.shields.io/badge/Tools-Heroku-informational?style=flat&logo=heroku&logoColor=white&color=2bbc8a)" alt="image" />
+        <img src="https://img.shields.io/badge/Tools-MongoDB-informational?style=flat&logo=mongodb&logoColor=white&color=2bbc8a)" alt="image" />
+        
+        </p>
+        
+        <hr>
+        <h2 id="github">Github</h2>
+        <p>
+            - <strong>URL</strong>
+            <a href="https://github.com/Lucas-Fonte/server_test">https://github.com/Lucas-Fonte/server_test</a>
+        </p>
+        <hr>
+        <hr>
+        <h2 id="instalation">Instalation</h2>
+        <ol>
+        <li>Clone the project</li>
+        <li>Enter the project directory</li>
+        <li>Run <strong>npm install</strong> or <strong>yarn install</strong></li>
+        </ol>
+        <hr>
+        <h2 id="usage">Usage</h2>
+        <ul>
+        <li><h3 id="endpoints">Endpoints</h3>
+        <ul>
+        <li><h4 id="health">Health</h4>
+        <details>
+        <summary>Details</summary>
+        
+        <p>
+            - <strong>URL</strong>
+          <a href="https://lucasfonte-server-test.herokuapp.com/health">https://lucasfonte-server-test.herokuapp.com/health</a>
+        </p>
+        
+        <p>
+            - <strong>Method:</strong>
+              <code>GET</code>
+        </p>
+        
+        <p>
+
+            - <strong>Headers:</strong>
+            <code>x-api-key: &lt;app_x_api_key&gt;</code>
+        </p>
+        
+        <p>
+            - <strong>Response:</strong>
+            <code>json
+                {
+                    &quot;health&quot;: true
+                }</code>
+                
+            </details>
+        </p>
+
+        </li>
+        <li><h4 id="users-signin">Users/SignIn</h4>
+        <details>
+        <summary>Details</summary>
+        
+        <p>
+            - <strong>URL</strong>
+            <a href="https://lucasfonte-server-test.herokuapp.com/users/signIn">https://lucasfonte-server-test.herokuapp.com/users/signIn</a>
+        </p>
+           
+        <p>
+            - <strong>Method:</strong>
+            <code>POST</code>
+        </p>
+            
+        <p>
+            - <strong>Headers:</strong>
+            <code>x-api-key: &lt;app_x_api_key&gt;</code>
+        </p>
+        
+        <p>
+
+            - <strong>Request:</strong>
+            
+            <code>json
+                {
+                    &quot;email&quot;: &lt;email_string&gt; *[required]*,
+                    &quot;password&quot;: &lt;password_string&gt; *[required]*
+                }</code>
+                
+        </p>
+
+        <p>
+            - <strong>Response:</strong>
+            
+            <code>json
+                {
+                    &quot;user&quot;: {
+                        &quot;id&quot;: &lt;user_id&gt;,
+                        &quot;name&quot;: &lt;user_name&gt;,
+                        &quot;email&quot;: &lt;user_email&gt;,
+                    },
+                    &quot;token&quot;: &lt;session_token&gt;
+                }</code>
+        </p>
+        
+        </details>
+        </li>
+        <li><h4 id="users-signup">Users/SignUp</h4>
+        <details>
+        <summary>Details</summary>
+        
+        <p>
+            - <strong>URL</strong>
+            <a href="https://lucasfonte-server-test.herokuapp.com/users/signUp">https://lucasfonte-server-test.herokuapp.com/users/signUp</a>
+        </p>
+            
+        <p>
+            - <strong>Method:</strong>
+            <code>POST</code>
+        </p>
+        
+        <p>
+            - <strong>Headers:</strong>
+            <code>x-api-key: &lt;app_x_api_key&gt;</code>
+        </p>
+        
+        <p>
+
+            - <strong>Request:</strong>
+            
+            <code>json
+                {
+                    &quot;name&quot;: &lt;name_string&gt; *[required]*,
+                    &quot;email&quot;: &lt;email_string&gt; *[required]*,
+                    &quot;password&quot;: &lt;password_string&gt; *[required]*,
+                    &quot;phones&quot;: [
+                    {
+                        &quot;phone_number&quot;: &lt;phone_number_integer&gt;,
+                        &quot;ddd&quot;: &lt;ddd_integer&gt;
+                    }
+                    ] *[optional]*
+                }</code>
+                
+        </p>
+
+        <p>
+
+            - <strong>Response:</strong>
+            
+            <code>json
+                {
+                    &quot;id&quot;: &lt;user_id&gt;,
+                    &quot;name&quot;: &lt;user_name&gt;,
+                    &quot;email&quot;: &lt;user_email&gt;,
+                    &quot;token&quot;: &lt;session_token&gt;
+                }</code>
+        </p>
+            
+        </details>
+    </li>
+        <li><h4 id="users-search">Users/Search</h4>
+        <details>
+        <summary>Details</summary>
+        
+        <p>
+            - <strong>URL</strong>
+            <a href="https://lucasfonte-server-test.herokuapp.com/users/{userId}">https://lucasfonte-server-test.herokuapp.com/users/{userId}</a>
+        </p>
+        
+        <p>
+            - <strong>Method:</strong>
+            <code>GET</code>
+        </p>
+        
+        <p>
+            - <strong>Headers:</strong>
+            <code>x-api-key: &lt;app_x_api_key&gt;</code>
+            <code>authorization: Bearer &lt;user_token&gt;</code>
+        </p>
+           
+        <p>
+
+            - <strong>Response:</strong>
+            
+            <code>json
+                {
+                    &quot;user&quot;: {
+                        &quot;id&quot;: &lt;user_id&gt;,
+                        &quot;name&quot;: &lt;user_name&gt;,
+                        &quot;email&quot;: &lt;user_email&gt;,
+                    },
+                }</code>
+                
+        </p>
+        </details>
+            
+</body>
