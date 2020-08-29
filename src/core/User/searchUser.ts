@@ -12,7 +12,7 @@ const searchUser = async (userId: string) => {
 
   const user = await User.findOne({
     _id: userId,
-    // last_activity: { $gte: latestActiveSession },
+    last_activity: { $gte: latestActiveSession },
   });
   console.log({ latestActiveSession, last_activity: user.last_activity });
 
