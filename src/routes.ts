@@ -7,6 +7,7 @@ const routes = Router();
 
 routes.use(apiKeyMiddleware);
 
+routes.get('/health', (request, response) => response.json({ health: true }));
 routes.post('/users/signIn', UserController.signIn);
 routes.post('/users/signUp', UserController.signUp);
 
