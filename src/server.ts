@@ -14,7 +14,6 @@ const startServer = () => {
 
   const applyMiddlewares = () => {
     app.use(express.json());
-    app.use(notFoundMiddleware);
   };
 
   const applyRoutes = () => {
@@ -24,6 +23,7 @@ const startServer = () => {
   applyStatic();
   applyMiddlewares();
   applyRoutes();
+  app.use(notFoundMiddleware);
 
   app.listen(PORT, () => {
     console.log('\nServer running on port: ', PORT);
