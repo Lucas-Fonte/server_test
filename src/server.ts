@@ -2,7 +2,7 @@ import './bootstrap';
 import express from 'express';
 import { routes } from './routes';
 
-const PORT = process.env.SERVER_PORT || 8000;
+const PORT = process.env.PORT || 8000;
 
 const startServer = () => {
   const app: express.Application = express();
