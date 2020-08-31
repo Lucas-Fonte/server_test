@@ -9,7 +9,8 @@
     "tsc": "tsc",
     "postinstall": "npm run tsc",
     "prod:serve": "node src/server.js",
-    "start": "npm run prod:serve"
+    "start": "npm run prod:serve",
+    "test": "jest --maxWorkers=1 --detectOpenHandles"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.9.1",
@@ -17,6 +18,8 @@
     "eslint": "^7.7.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.3.0",
     "ts-node-dev": "^1.0.0-pre.56",
     "typescript": "^3.9.7"
   },

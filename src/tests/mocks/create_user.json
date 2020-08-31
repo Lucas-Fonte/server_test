@@ -1,0 +1,11 @@
+{
+  "name": "create_test",
+  "email": "create_test@testing.com",
+  "password": "create_test",
+  "phones": [
+    {
+      "phone_number": 12345678,
+      "ddd": 11
+    }
+  ]
+}

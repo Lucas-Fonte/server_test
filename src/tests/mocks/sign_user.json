@@ -1,0 +1,11 @@
+{
+  "name": "sign_test",
+  "email": "sign_test@testing.com",
+  "password": "sign_test",
+  "phones": [
+    {
+      "phone_number": 12345678,
+      "ddd": 11
+    }
+  ]
+}

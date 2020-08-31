@@ -2,6 +2,7 @@ module.exports = {
   env: {
     es2020: true,
     node: true,
+    jest: true,
   },
   extends: ['airbnb-base'],
   parser: '@typescript-eslint/parser',
@@ -21,5 +22,6 @@ module.exports = {
     'comma-dangle': 'off',
     'implicit-arrow-linebreak': 'off',
     'no-return-await': 'off',
+    camelcase: 'off',
   },
 };

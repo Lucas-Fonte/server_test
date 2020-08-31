@@ -1,18 +1,14 @@
-/* eslint-disable no-return-await */
-/* eslint-disable object-curly-newline */
 import * as Yup from 'yup';
-// eslint-disable-next-line no-unused-vars
-import { Document } from 'mongoose';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+// eslint-disable-next-line no-unused-vars
+import { UserData } from '.';
 import {
   createMongoConnection,
   closeMongoConnection,
 } from '../../database/createMongoConnection';
 import { User } from '../../models/User';
 import { authConfig } from '../../config/auth';
-// eslint-disable-next-line no-unused-vars
-import { UserData } from '.';
 
 const checkPassword = async (password: string, passwordHash: string) =>
   await bcrypt.compare(password, passwordHash);
